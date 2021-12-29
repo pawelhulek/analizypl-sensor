@@ -1,0 +1,10 @@
+{
+  "domain": "analizy_pl_sensor",
+  "name": "analizy.pl Sensor",
+  "documentation": "https://github.com/pawel.hulek/analizypl-sensor",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": [],
+  "iot_class": "cloud_polling",
+  "version": "0.0.1"
+}
