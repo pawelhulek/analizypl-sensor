@@ -47,7 +47,7 @@ class AnalizySensor(SensorEntity):
     def state(self):
         return self._state
 
-    def update(self) -> None:
+    def _update(self) -> None:
         response = requests.get("https://www.analizy.pl/api/quotation/fio/" + self.quotationId).json()
         result = max(response.get('series')[0].get('price'), key=lambda item: item.get('date')).get('value')
         self._state = float(result) * float(self.amount)
