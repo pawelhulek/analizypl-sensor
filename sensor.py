@@ -37,7 +37,7 @@ class AnalizySensor(SensorEntity):
         self.amount = config.get(CONF_COUNT)
         response = requests.get("https://www.analizy.pl/api/quotation/fio/" + self.quotationId).json()
         self.entity_name = response.get('label')
-        self.update = Throttle(timedelta(days=(1)))(self._update)
+        self.update = Throttle(timedelta(minutes=(600)))(self._update)
 
     @property
     def name(self) -> str:
